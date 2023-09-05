@@ -1,5 +1,11 @@
-const os = require('os');
-const path = require('path');
+const os = require("os");
+const path = require("path");
+const ChiaConnection = require("./chia_connection");
+const {
+  ServiceNames,
+  DefaultServicePorts,
+  createConnection,
+} = require("./connection_factory");
 
 let chiaRoot = null;
 
@@ -16,8 +22,12 @@ const getChiaRoot = () => {
   }
 
   return chiaRoot;
-}
+};
 
 module.exports = {
   getChiaRoot,
-}
+  ChiaConnection,
+  ServiceNames,
+  DefaultServicePorts,
+  createConnection,
+};
